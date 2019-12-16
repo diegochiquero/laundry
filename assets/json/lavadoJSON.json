@@ -1,0 +1,147 @@
+{
+    "personas": {
+        "trabajador": [{
+                "dni": "12345678A",
+                "nombre": "Carmen",
+                "apellidos": "Herrera Hidalgo",
+                "sueldoBase": 800
+            },
+            {
+                "dni": "87654321B",
+                "nombre": "Javier",
+                "apellidos": "Moreno Vallejo",
+                "sueldoBase": 1000
+            }],
+        "cliente": [{
+                "dni": "32165487C",
+                "nombre": "Jose",
+                "apellidos": "Calle Hinojosa"
+            },
+            {
+                "dni": "98765432D",
+                "nombre": "Alberto",
+                "apellidos": "Calleja Valle"
+            },
+            {
+                "dni": "35768241H",
+                "nombre": "Pedro",
+                "apellidos": "Salgado Merida"
+            }],
+        "socio": [{
+                "dni": "95184625E",
+                "nombre": "Carmen",
+                "apellidos": "Trillo Lacruz",
+                "nacimiento": "19/08/1992"
+            },
+            {
+                "dni": "65498721F",
+                "nombre": "Adela",
+                "apellidos": "Bilbao Onza",
+                "nacimiento": "26/02/1997"
+            },
+            {
+                "dni": "95184627I",
+                "nombre": "Sofía",
+                "apellidos": "Campos Teruel",
+                "nacimiento": "07/12/1987"
+            }]
+    },
+    "extras": [{
+            "id": "001",
+            "nombre": "Llantas",
+            "precio": 10,
+            "fecha": "22/03/2015",
+            "activo": true
+        },
+        {
+            "id": "002",
+            "nombre": "Sillones",
+            "precio": 20,
+            "fecha": "22/03/2015",
+            "activo": true
+        }],
+    "lavados": {
+        "Pequeño": [{
+                "id" : "001",
+                "matricula": "1234ABC",
+                "dniCliente": "32165487C",
+                "dniTrabajador": "12345678A",
+                "fecha": "12/02/2015",
+                "extras": null,
+                "precioBase": 16.5
+            }, {
+                "id": "002",
+                "matricula": "5678DEF",
+                "dniCliente": "98765432D",
+                "dniTrabajador": "87654321B",
+                "fecha": "18/02/2015",
+                "extras": [{
+                        "id": "001",
+                        "nombre": "Llantas",
+                        "precio": 10,
+                        "fecha": "22/03/2015",
+                        "activo": true
+                    }],
+                "precioBase": 16.5
+            }],
+        "Grande": [{
+                "id":"003",
+                "matricula": "4321HIJ",
+                "dniCliente": "87654321B",
+                "dniTrabajador": "12345678A",
+                "fecha": "12/01/2015",
+                "extras": null,
+                "precioBase": 18.5
+            }, {
+                "id":"004",
+                "matricula": "8765KLM",
+                "dniCliente": "87654321B",
+                "dniTrabajador": "12345678A",
+                "fecha": "02/01/2015",
+                "extras": [{
+                        "id": "002",
+                        "nombre": "Sillones",
+                        "precio": 20,
+                        "fecha": "22/03/2015",
+                        "activo": false
+                    }],
+                "precioBase": 18.5
+            }],
+        "Furgoneta": [{
+                "id":"005",
+                "matricula": "6789NOP",
+                "dniCliente": "12345678A",
+                "dniTrabajador": "12345678A",
+                "fecha": "15/02/2015",
+                "extras": [{
+                        "id": "001",
+                        "nombre": "Llantas",
+                        "precio": 10,
+                        "fecha": "22/03/2015",
+                        "activo": true
+                    }, {
+                        "id": "002",
+                        "nombre": "Sillones",
+                        "precio": 20,
+                        "fecha": "22/03/2015",
+                        "activo": true
+                    }],
+                "precioBase": 22.5
+            }, {
+                "id":"006",
+                "matricula": "9876QRS",
+                "dniCliente": "87654321B",
+                "dniTrabajador": "12345678A",
+                "fecha": "31/03/2015",
+                "extras": [{
+                        "id": "002",
+                        "nombre": "Sillones",
+                        "precio": 20,
+                        "fecha": "22/03/2015",
+                        "activo": true
+                    }],
+                "precioBase": 22.5
+            }]
+
+    }
+}

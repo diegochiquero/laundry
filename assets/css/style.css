@@ -1,0 +1,158 @@
+body{
+    background-color: #EAEAEA;
+    font-family: arial;
+}
+h2{
+    margin:2% 10% 0 2%;
+    display:inline;
+}
+input,button{width: 80%;}
+
+#botones1,#botones2{
+    display:inline;
+}
+#botones1{
+    margin-left: 3.5%;
+}
+#botones2{
+    /*margin-left:1%;*/
+}
+
+#content{ 
+    width: 80%;
+    height: 100%;
+    margin: 15px 0px 0 100px;
+    float:left;
+    //margin-left: 100px;   
+    background-color: white;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    padding-left: 50px;
+}
+#superior{
+    width: 100%;
+    margin-left:10px;
+    margin-top:40px;
+}
+
+/*********************BLOQUE GENERAR FACTURA**********************/
+#izquierdo{
+    /*width: 25%;*/
+    height: 470px;
+    float:left;
+    background-color: #EAEAEA;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    margin: 0 10px 15px 10px;
+    padding: 20px 0 10px 20px;
+}
+
+/********************BLOQUE CRUD*****************/
+#crud{
+    width: 22%;
+    height: 463px;
+    float:left;
+    background-color: #EAEAEA;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    margin: 0 10px 10px 10px;
+    padding: 27px 0 10px 31px;
+}
+#crud select,input{width:85%;}
+#crud button{width:38%;}
+
+/********************BLOQJE DONDE SE MUESTRAN LOS LISTADOS Y EL TOTAL DE LA FACTURA*************/
+#mostrar{
+    width: 43%;
+    height: 490px;
+    float:left;
+    background-color: #EAEAEA;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    margin: 0 10px 10px 10px;
+    padding: 0 0 10px 20px;
+    overflow: auto;
+}
+.btn{
+    width: 42%;
+    margin-left: 95px;
+}
+/*div {
+    margin: .4em 0;
+}
+div label {
+    width: 25%;
+    float: left;
+}*/
+
+select{
+    border:1px solid grey;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    width:87%;;
+    height:27px;
+    margin:0 0 10px 0;
+}
+
+input{
+    border:1px solid grey;
+    background-color: white;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    height:22px;
+    margin:0 0 10px 0;
+}
+button{
+    border:1px solid grey;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    width:105px;
+    height:25px;
+    display: inline;
+    margin:0 17px 15px 2px;
+}
+button:hover{
+    background-color: grey;
+    color: white;
+}
+input[type="checkbox"]{
+    width: 50px;
+
+    display:block;
+}
+#idCheck label{
+    display:inline;
+    float:left;
+    width: 50px;
+}
+#idCheckEdi label {
+    display: inline;
+    float: left;
+    width: 50px;
+}
+.oculto{
+    display: none;
+}
+input[type="radio"]{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 0 10px 10px 0;
+}
+#btnNomCal{
+    margin: 5% 1% 0 48%;
+}

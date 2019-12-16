@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Lavadero</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+        <!--js para poder usar la herramienta Dexie e implementar el indexedDB-->
+        <script src="vendors/Dexie/Dexie.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="content">
+
+            <div id="superior">
+                <h2>Lavado</h2>
+                <div id="botones1">
+                    <button type="button" id="btnCrudUsuarios" value="Usuarios" style="width: 80px;">Usuarios</button>
+                    <button type="button" id="btnCrudExtras" value="Extras"  style="width: 60px;">Extras</button>
+                    <button type="button" id="btnCrudLavados" value="Lavados"  style="width: 80px;">Lavados</button>
+                </div>
+                <div id="botones2">
+                    <button type="button" id="btnNomina" value="btnNomina"  style="width:75px;">Nomina</button>
+                    <button type="button" id="btnCarAjax" value="btnCarAjax" disabled style="width:95px;">Cargar Ajax</button>
+                    <button type="button" id="btnGuaIndDB" value="btnGuaIndDB" style="width:120px;">Guardar IndDB</button>
+                    <button type="button" id="btnCarIndDB" value="btnCarIndDB" style="width:120px;">Cargar IndDB</button>
+                </div>
+            </div>
+
+            <div id="izquierdo">
+                <form id="formLavado" name="formLavado">
+                    <label for="selLavado">Tipo lavado: </label>
+                    <select id="selLavado">
+                        <option value="-1">Seleccione ..</option>
+                    </select><br/>
+                    <label for="txtMatricula">Matrícula: </label><br/>
+                    <input type="text" id="txtMatricula" name="txtMatricula" value="0000SDF"><br/>
+                    <label for="txtDniCliente">DNI cliente: </label><br/>
+                    <input type="text" id="txtDniCliente" name="txtDniCliente" value="32165487C"><br/>
+                    <label for="selTrabaja">DNI trabajador: </label>
+                    <select id="selTrabaja">
+                        <option value="-1">Seleccione ..</option>                      
+                    </select><br/>
+                    <label for="txtFecha">Fecha:</label><br/>
+                    <input type="text" id="txtFecha" name="txtFecha" value="17/02/2015"><br/>
+                    <label>Extras</label>
+                    <div id="idCheck" style="margin-top: 12px;"> 
+                        <!--  Es generado con el DOM-->  
+                    </div>
+                    <button class="btn" type="button" id="btnPrecio" name="btnPrecio" value="Precio">Precio</button>
+                </form>
+            </div>
+
+            <div id="crud"><!--class="oculto"-->
+                <button type="button" id="btnAlta" value="btnAltaUser">Alta</button>
+                <button type="button" id="btnBaja" value="btnBajaUser">Baja</button>
+                <button type="button" id="btnEdit" value="btnEditUser">Editar</button>
+                <button type="button" id="btnList" value="btnListUser">Listar</button>
+                <div id="usuarios">
+                    <form id="formUsuario" name="formUsuario">
+                        <label for="seleUsuario">Tipo usuario: </label>
+                        <select id="seleUsuario">
+                            <option value="-1">Seleccione...</option>
+                            <option value="0">Trabajador</option>
+                            <option value="1">Cliente</option>
+                            <option value="2">Socio</option>
+                        </select><br/>
+                        <!--  Es generado con el DOM-->                        
+                    </form>
+                </div>
+                <div id="extras" class="oculto">
+                    <form id="formExtras" name="formExtras">
+                        <label for="txtIdExtra">Id Extra</label>
+                        <input type="number" id="txtIdExtra" name="txtIdExtra" value="003"><br/>
+                        <label for="txtNomExtra">Nombre: </label>
+                        <input type="text" id="txtNomExtra" name="txtNomExtra" value="Sillones"><br/>
+                        <label for="txtPreExtra">Precio: </label>
+                        <input type="text" id="txtPreExtra" name="txtPreExtra" value="30"><br/>
+                        <label for="txtFecExtra">Fecha: </label>
+                        <input type="text" id="txtFecExtra" name="txtFecExtra" value="24/04/2015"><br/>                  
+                    </form>
+                </div>
+                <div id="lava" class="oculto">
+                    <form id="formLava" name="formLava">
+                        <label for="txtId">Id lavado</label>
+                        <input type="number" id="txtId" name="txtId" value=""><br/>
+                        <label for="seleTipo">Tipo lavado</label>
+                        <select id="seleTipo">
+                            <option value="-1">Seleccione...</option>
+                            <option value="0">Pequeño</option>
+                            <option value="1">Grande</option>
+                            <option value="2">Furgoneta</option>
+                        </select><br/>
+                        <label for="txtMatriEdi">Matrícula: </label><br/>
+                        <input type="text" id="txtMatriEdi" name="txtMatriEdi" value=""><br/>
+                        <label for="txtDniCliEdi">DNI cliente: </label><br/>
+                        <input type="text" id="txtDniCliEdi" name="txtDniCliEdi" value=""><br/>
+                        <label for="txtTrabaEdi">DNI trabajador:</label>
+                        <input type="text" id="txtTrabaEdi" name="txtTrabaEdi" value=""><br/>
+                        <label for="txtFecEdi">Fecha:</label><br/>
+                        <input type="text" id="txtFecEdi" name="txtFecEdi" value=""><br/>
+                        <div id="idCheckEdi" style="margin-top: 12px;"> 
+                            <!--  Es generado con el DOM-->  
+                        </div>
+                    </form>
+                </div>
+                <form id="formNomina" name="formNomina">
+                    <div id="nomina" class="oculto">
+                        <label for="selTraba">Trabajador: </label>
+                        <select id="selTraba">
+                            <option value="-1">Seleccione ..</option>                      
+                        </select><br/>
+                        <label for="txtFecIni">Fecha inicio:</label><br/>
+                        <input type="text" id="txtFecIni" name="txtFecIni" value="01/02/2015"><br/>
+                        <label for="txtFecFin">Fecha fin:</label><br/>
+                        <input type="text" id="txtFecFin" name="txtFecFin" value="28/02/2015"><br/>
+                        <button class="btn" type="button" id="btnNomCal" name="btnNomCal" value="NominaCal">Calcular</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="mostrar"></div>
+
+        </div>
+
+        <!--El orden de estos script ha de ser primero las clases y en especial la de capturas de errores y el último en cargar debe ser el main-->
+        <script src="assets/js/LavaderoError.js" type="text/javascript"></script>
+        <script src="assets/js/funcionAjax.js" type="text/javascript"></script>
+        <script src="assets/js/Lavadero.js" type="text/javascript"></script>
+        <script src="assets/js/Usuario.js" type="text/javascript"></script>
+        <script src="assets/js/Trabajador.js" type="text/javascript"></script>
+        <script src="assets/js/Cliente.js" type="text/javascript"></script>
+        <script src="assets/js/Socio.js" type="text/javascript"></script>
+        <script src="assets/js/Lavado.js" type="text/javascript"></script>
+        <script src="assets/js/Pequenho.js" type="text/javascript"></script>
+        <script src="assets/js/Grande.js" type="text/javascript"></script>
+        <script src="assets/js/Furgoneta.js" type="text/javascript"></script>
+        <script src="assets/js/Extra.js" type="text/javascript"></script>
+        <script src="main.js" type="text/javascript"></script>
+    </body>
+</html>
